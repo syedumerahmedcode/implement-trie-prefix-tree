@@ -36,5 +36,27 @@ public class App {
          * trie.search("app"); // return True
          * 
          */
+        Trie trie = new Trie();
+
+        // Insert words
+        trie.insert("apple");
+        trie.insert("app");
+        trie.insert("bat");
+        trie.insert("ball");
+
+        // Test search
+        System.out.println("Can we find the word 'apple': " + trie.search("apple")); // Output: true
+        System.out.println("Can we find the word 'app': " + trie.search("app")); // Output: true
+        System.out.println("Can we find the word 'bat': " + trie.search("bat")); // Output: true
+        System.out.println("Can we find the word 'bad': " + trie.search("bad")); // Output: false
+
+        // Test startsWith
+        System.out.println("Do a word starts with 'app': " + trie.startsWith("app")); // Output: true
+        System.out.println("Do a word starts with 'ba': " + trie.startsWith("ba")); // Output: true
+        System.out.println("Do a word starts with 'cat': " + trie.startsWith("cat")); // Output: false
+
+        // Edge case
+        System.out.println("Can we find an empty string: " + trie.search("")); // Should be false, as empty string is
+                                                                               // not a valid word
     }
 }
